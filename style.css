@@ -422,20 +422,46 @@ img {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .section-header {
+    margin-bottom: var(--spacing-md);
+  }
+
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
   }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
+
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    font-size: 1rem;
+    padding: 14px 32px;
   }
 
   .header-btn,
   .nav {
     display: none;
   }
+
   .hamburger {
     display: flex;
   }
@@ -450,9 +476,97 @@ img {
     padding: var(--spacing-md);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   }
+
   .nav.active .nav-list {
     flex-direction: column;
     align-items: center;
+  }
+
+  /* Car Grid responsive */
+  .car-image-item {
+    flex: 0 0 280px;
+    height: 200px;
+  }
+
+  /* Order Sales Section */
+  .order-sales-intro h3 {
+    font-size: 1.6rem;
+  }
+
+  .order-sales-intro p {
+    font-size: 1rem;
+  }
+
+  .flow-steps {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .step {
+    min-width: 100%;
+  }
+
+  /* About Section */
+  .about-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  /* Support Section */
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: var(--spacing-md);
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Store Introduction */
+  .store-intro-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .store-images {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .store-image-main {
+    grid-row: auto;
+  }
+
+  .store-text h3 {
+    font-size: 1.4rem;
+  }
+
+  /* Company Info */
+  .company-container {
+    grid-template-columns: 1fr;
+  }
+
+  .company-details-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .map-container {
+    min-height: 250px;
+  }
+
+  /* View More Wrapper */
+  .view-more-wrapper p {
+    font-size: 0.9rem;
+  }
+
+  .delivery-cta .btn {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -630,6 +744,7 @@ img {
   color: var(--color-accent);
 }
 
+/* Contact Note Styling */
 .contact-note {
   background: var(--color-gray-light);
   padding: 12px 16px;
@@ -639,47 +754,70 @@ img {
   margin-bottom: var(--spacing-sm);
   text-align: center;
 }
-/* Instagram Section */
-.instagram {
-  background-color: var(--color-white);
-}
 
-.instagram-feed-wrapper {
-  margin-bottom: var(--spacing-md);
-}
-
-.feed-placeholder {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border: 2px dashed var(--color-gray-light);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-xl) var(--spacing-md);
-  text-align: center;
-  color: var(--color-text-light);
-}
-
-.feed-placeholder i {
-  font-size: 4rem;
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: var(--spacing-sm);
-  display: block;
-}
-
-.feed-placeholder p {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: var(--spacing-xs);
-}
-
-.feed-placeholder small {
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
-
+/* Delivery Examples Section */
 .delivery-examples {
   background-color: #f8f9fa;
+}
+
+/* Car Grid for Delivery Examples - Horizontal Scroll */
+.car-grid {
+  display: flex;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-lg);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: var(--spacing-sm);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.car-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.car-grid::-webkit-scrollbar-track {
+  background: var(--color-gray-light);
+  border-radius: 4px;
+}
+
+.car-grid::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+.car-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+.car-image-item {
+  flex: 0 0 400px;
+  scroll-snap-align: start;
+  height: 280px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-image-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.car-image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.car-image-item:hover img {
+  transform: scale(1.05);
+}
+
+.view-more-wrapper {
+  text-align: center;
+  margin-top: var(--spacing-md);
 }
 
 .delivery-cta {
